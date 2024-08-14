@@ -1,11 +1,17 @@
 # installROS2
-Scripts to install ROS2 (foxy) on the NVIDIA Jetson Development Kits
+Scripts modified to install ROS2 (foxy) on the VOXL2 Development Kits
 
-This is a simple script to install ROS2 on the NVIDIA Jetson Development Kits.
+In order to install ROS2 on voxl2:
 
-In order to run the script:
+## Upgrade cmake
+First, upgrade the cmake :
 
-<blockquote>$ ./installROS2</blockquote>
+```
+./upgrade_cmake.sh
+```
+## Install ROS2
+Then run,
+<blockquote>$ ./install_ROS2_voxl2.sh</blockquote>
 
 The script roughly follows the 'Install ROS From Source' procedures from:
 
@@ -18,6 +24,13 @@ Dockerfile.ros.foxy
 https://github.com/dusty-nv/jetson-containers
 </blockquote> 
 
+## Install DDS
+
+To install dds, simply run :
+```
+./install_dds.sh
+```
+
 <h3>Notes</h3>
 Currently the NVIDIA Jetsons run Ubuntu 18.04. ROS2 foxy requires Ubuntu 20.04. However, by providing some of the 20.04 equivalents, it is possible to run ROS2 foxy on the Jetsons. This script provides workarounds. Note that this is not exhaustive, you may run into situations where there are gaps, and certain packages may have issues.
 
@@ -29,3 +42,6 @@ Currently the NVIDIA Jetsons run Ubuntu 18.04. ROS2 foxy requires Ubuntu 20.04. 
 <b>January, 2021</b>
 * Tested on JetPack 4.5, L4T 32.5
 * Tested on Jetson Xavier NX
+
+<b>August, 2023</b>
+* Tested on VOXL2 
